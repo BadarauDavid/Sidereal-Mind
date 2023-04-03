@@ -52,12 +52,12 @@
   align-items: center;
 }
 
-.card-container>div {
+.card-container > div {
   flex-basis: calc(33.33% - 10px);
   margin-bottom: 20px;
 }
 
-.card-container>div:last-child {
+.card-container > div:last-child {
   margin-left: auto;
   margin-right: auto;
 }
