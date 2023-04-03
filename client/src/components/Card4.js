@@ -5,8 +5,7 @@ function Card4 () {
         <div className='card4'>
             <img src="link" alt="Breathwork exercises" />
             <h2>Breathwork exercises</h2>
-            <p>Holotropic breathwork</p>
-            <p>Wim Hof Technique</p>
+            <p>Holotropic breathwork, Wim Hof Technique</p>
         </div>
     )
 }

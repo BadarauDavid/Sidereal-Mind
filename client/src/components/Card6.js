@@ -5,8 +5,7 @@ function Card6() {
         <div className='card6'>
             <img src="link" alt="StorySharing" />
             <h2>StorySharing</h2>
-            <p>Join the SiderealMind community. </p>
-            <p> Share your meditation experience</p>
+            <p>Join the SiderealMind community and share your experience</p>
         </div>
     )
 }
