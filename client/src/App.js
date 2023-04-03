@@ -12,7 +12,7 @@ import Card7 from './components/Card7';
 
 
 function App() {
-  const [bgColor, setBgColor] = useState("#9e9e9e");
+  const [bgColor, setBgColor] = useState("#2DB4B1");
 
   const handleBgColor = (color) => {
     setBgColor(color);
