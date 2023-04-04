@@ -36,11 +36,11 @@ return (
     <BackgroundColorButton onBgColorChange={handleBgColor} />
     <div className='card-container'>
       {cardDetails.map((card, i) => (
-        <Link to={card.url} key={i}>
+        <Link to={card.url} key={i} className={card.className}>
           <CardContainer
             picture={card.photoUrl}
             className={card.className}
-            altName={card.name}
+            name={card.name}
             paragraph={card.paragraph}
           />
         </Link>

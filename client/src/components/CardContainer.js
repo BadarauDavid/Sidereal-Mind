@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CardContainer ({picture},{className},{name},{paragraph}) {
+function CardContainer ({picture,className,name,paragraph}) {
     return (
         <div className={className}>
             <img src={picture} />
