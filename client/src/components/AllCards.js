@@ -22,29 +22,28 @@ useEffect(() => {
             }
           })
           const data = await urlpackage.json();
-          setPictures(data.photos[0].src.original);
-          console.log(data.photos[0].src.original);
+          const pictureURLs=data.photos.map(photo => photo.src.original);
+          
+          setPictures(pictureURLs);
+          console.log(pictureURLs);
         }
         catch (error) {
           console.error(error);
       
         }
       }
-      
-    for(let i=0; i<7; i++){
-        getNaturePhoto();
-    }
+      getNaturePhoto(7);    
 }, [])    
 
 return (
     <div className='card-container'>
-        <Stars picture={pictures}/>
-        <Music picture={pictures}/>
-        <GuidedMeditation picture={pictures}/>
-        <Breathwork picture={pictures}/>
-        <SacredGeometry picture={pictures}/>
-        <StorySharing picture={pictures}/>
-        <AboutUs picture={pictures}/>
+        <Stars picture={pictures[0]}/>
+        <Music picture={pictures[1]}/>
+        <GuidedMeditation picture={pictures[2]}/>
+        <Breathwork picture={pictures[3]}/>
+        <SacredGeometry picture={pictures[4]}/>
+        <StorySharing picture={pictures[5]}/>
+        <AboutUs picture={pictures[6]}/>
     </div>
     )
 }
