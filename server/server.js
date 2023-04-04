@@ -48,4 +48,14 @@ app.get("/api/story-sharing",async(req,res)=>{
     }
 })
 
+app.delete("/api/story-sharing/:id",async(req,res)=>{
+    const id = req.params.id;
+    try {
+         await Story.findByIdAndDelete(id);
+    }catch(err){
+        console.error(err); 
+    }
+
+})
+
 app.listen(3001, () => console.log('Server started on port 3001'));
