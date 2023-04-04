@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-function StorySharing({picture}) {
+function StorySharing() {
     return (
-        <div className='card6'>
-            <img src={picture} alt="StorySharing" />
-            <h2>StorySharing</h2>
+        <div >
             <p>Join the SiderealMind community and share your experience</p>
         </div>
     )

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-function Breathwork ({picture}) {
+function Breathwork () {
     return (
-        <div className='card4'>
-            <img src={picture} alt="Breathwork exercises" />
-            <h2>Breathwork exercises</h2>
+        <div>
             <p>Holotropic breathwork, Wim Hof Technique</p>
         </div>
     )

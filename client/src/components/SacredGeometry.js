@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-function SacredGeometry ({picture}) {
+function SacredGeometry () {
     return (
-        <div className='card5'>
-            <img src={picture} alt="Sacred Geometry" />
-            <h2>Sacred Geometry</h2>
+        <div >
             <p> Visualization power of mandalas </p>
         </div>
     )

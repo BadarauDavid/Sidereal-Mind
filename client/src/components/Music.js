@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-function Music ({picture}) {
+function Music () {
     return (
-        <div className='card2'>
-            <img src={picture} alt="Music" />
-            <h2>Music</h2>
+        <div >
             <p>Music for programming, stay focused, sleep, and relaxation</p>
         </div>
     )

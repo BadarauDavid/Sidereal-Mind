@@ -8,6 +8,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Stars from './components/Stars';
+import Music from './components/Music';
+import GuidedMeditation from './components/GuidedMeditation';
+import Breathwork from './components/Breathwork';
+import SacredGeometry from './components/SacredGeometry';
+import StorySharing from './components/StorySharing';
+import AboutUs from './components/AboutUs';
 
 
 const router = createBrowserRouter([
@@ -16,9 +22,32 @@ const router = createBrowserRouter([
     element: <Homepage/>,
   },
   {
-    path: "stars/:picture",
+    path: "/stars",
     element: <Stars/>,
+  },
+  {
+    path: "/music",
+    element: <Music/>,
+  },
+  {
+    path: "/guided-meditation",
+    element: <GuidedMeditation/>,
+  },
+  {
+    path: "/breathwork",
+    element: <Breathwork/>,
+  },
+  {
+    path: "/sacred-geometry",
+    element: <SacredGeometry/>,
+  },{
+    path: "/story-sharing",
+    element: <StorySharing/>,
+  },{
+    path: "/about-us",
+    element: <AboutUs/>,
   }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

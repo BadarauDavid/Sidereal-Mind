@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-function GuidedMeditation ({picture}) {
+function GuidedMeditation () {
     return (
-        <div className='card3'>
-            <img src={picture} alt="Guided meditation" />
-            <h2>Guided meditation</h2>
+        <div>
             <p> Try immersive guided meditation </p>
         </div>
     )

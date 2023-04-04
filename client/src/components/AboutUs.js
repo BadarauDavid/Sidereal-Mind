@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-function AboutUs({picture}) {
+function AboutUs() {
     return (
-        <div className='card7'>
-            <img src={picture} alt="About SiderealMind" />
-            <h2>About SiderealMind</h2>
+        <div>
             <p>Learn more about us</p>
         </div>
     )
