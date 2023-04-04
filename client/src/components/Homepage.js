@@ -6,10 +6,18 @@ import Breathwork from './Breathwork';
 import SacredGeometry from './SacredGeometry';
 import StorySharing from './StorySharing';
 import AboutUs from './AboutUs';
+import BackgroundColorButton from "./BackgroundColorButton";
+import Header from "./Header";
+import { Link } from "react-router-dom";
 
-
-function AllCards () {
+function Homepage () {
 const [pictures, setPictures] = useState("");
+
+const [bgColor, setBgColor] = useState("#2DB4B1");
+
+const handleBgColor = (color) => {
+  setBgColor(color);
+};
 
 useEffect(() => {
     async function getNaturePhoto(number) {
@@ -23,9 +31,7 @@ useEffect(() => {
           })
           const data = await urlpackage.json();
           const pictureURLs=data.photos.map(photo => photo.src.original);
-          
           setPictures(pictureURLs);
-          console.log(pictureURLs);
         }
         catch (error) {
           console.error(error);
@@ -35,16 +41,23 @@ useEffect(() => {
       getNaturePhoto(7);    
 }, [])    
 
+
+
 return (
-    <div className='card-container'>
-        <Stars picture={pictures[0]}/>
-        <Music picture={pictures[1]}/>
-        <GuidedMeditation picture={pictures[2]}/>
-        <Breathwork picture={pictures[3]}/>
-        <SacredGeometry picture={pictures[4]}/>
-        <StorySharing picture={pictures[5]}/>
-        <AboutUs picture={pictures[6]}/>
-    </div>
+  <div className="App" style={{ backgroundColor: bgColor }}>
+      <Header />
+      <BackgroundColorButton onBgColorChange={handleBgColor} />
+      <div className='card-container'>
+          <Link to ={`stars/${pictures[3]}`}>Stars</Link>
+          {/* <Stars picture={pictures[3]}/> */}
+          <Music picture={pictures[1]}/>
+          <GuidedMeditation picture={pictures[2]}/>
+          <Breathwork picture={pictures[0]}/>
+          <SacredGeometry picture={pictures[4]}/>
+          <StorySharing picture={pictures[5]}/>
+          <AboutUs picture={pictures[6]}/>
+      </div>
+  </div>
     )
 }
-export default AllCards;
+export default Homepage;

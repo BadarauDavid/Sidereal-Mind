@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import { useParams } from "react-router-dom";
 
-function Stars ({picture}) {
+function Stars () {
+    let {picture} = useParams();
     return (
         <div className='card1'>
             <img src={picture} alt="Sky is the limit" />
