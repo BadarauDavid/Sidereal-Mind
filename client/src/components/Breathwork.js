@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-function Card4 () {
+function Breathwork ({picture}) {
     return (
         <div className='card4'>
-            <img src="link" alt="Breathwork exercises" />
+            <img src={picture} alt="Breathwork exercises" />
             <h2>Breathwork exercises</h2>
             <p>Holotropic breathwork, Wim Hof Technique</p>
         </div>
     )
 }
 
-export default Card4;
+export default Breathwork;
