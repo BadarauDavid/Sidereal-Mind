@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
@@ -7,6 +7,9 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
     const [pressEdit, setPressEdit] = useState(true);
     const [nameEdit, setNameEdit] = useState(name);
     const [storyEdit, setStoryEdit] = useState(story);
+    const [imageUrl, setImageUrl] = useState("");
+
+
     const handleDelete = async () => {
         try {
             const response = await fetch(`http://localhost:3001/api/story-sharing/${id}`, {
@@ -53,6 +56,34 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
         }
     }
 
+    const API_KEY = "EYakiC9CRTtStwIrnt4EkxmdhZHB3TkqAqeTC19AIajI5yi3BksUzX3v";
+    const API_URL = "https://api.pexels.com/v1/search?per_page={1-50}";
+
+    const fetchData = async (query) => {
+        const response = await fetch(`${API_URL}&query=${query}`, {
+            headers: {
+                Authorization: API_KEY
+            }
+        });
+        const data = await response.json();
+        if (data.photos && data.photos.length > 0) {
+            return data.photos[0].src.small;
+        }
+        return "";
+    }
+
+    useEffect(() => {
+  const fetchUrl = async () => {
+    try {
+      const imageUrl = await fetchData(name);
+      setImageUrl(imageUrl);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  fetchUrl();
+}, [name]);
+
     return (
         <div className="card-story">
             {pressEdit ? (
@@ -60,6 +91,7 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
                     <h2>{name}</h2>
                     <p>{story.slice(0, number)}</p>
                     <p>{date}</p>
+                    <img src={imageUrl} />
                     <button onClick={() => setPressEdit(!pressEdit)} className="story-button">
                     <i className="fa fa-scissors"></i>
                     </button>

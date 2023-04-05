@@ -1,174 +1,194 @@
     body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
 
-  .App {
-    text-align: center;
-  }
+    .App {
+      text-align: center;
+    }
 
-  .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .App {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
-    align-items: center;
-  }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+      align-items: center;
+    }
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
 
-  .card1,
-  .card2,
-  .card3,
-  .card4,
-  .card5,
-  .card6,
-  .card7 {
-    position: relative;
-    width: 330px;
-    height: 230px;
-    margin: 0 20px 40px 20px;
-    overflow: hidden;
-    border-radius: 8px;
-  }
+    .card1,
+    .card2,
+    .card3,
+    .card4,
+    .card5,
+    .card6,
+    .card7 {
+      position: relative;
+      width: 330px;
+      height: 230px;
+      margin: 0 20px 40px 20px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
 
-  .card1 img,
-  .card2 img,
-  .card3 img,
-  .card4 img,
-  .card5 img,
-  .card6 img,
-  .card7 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .card1 img,
+    .card2 img,
+    .card3 img,
+    .card4 img,
+    .card5 img,
+    .card6 img,
+    .card7 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .card1 h2,
-  .card2 h2,
-  .card3 h2,
-  .card4 h2,
-  .card5 h2,
-  .card6 h2,
-  .card7 h2 {
-    position: absolute;
-    bottom: 50%;
-    left: 0;
-    padding: 8px;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-  }
+    .card1 h2,
+    .card2 h2,
+    .card3 h2,
+    .card4 h2,
+    .card5 h2,
+    .card6 h2,
+    .card7 h2 {
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      padding: 8px;
+      margin: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+    }
 
-  .card1 p,
-  .card2 p,
-  .card3 p,
-  .card4 p,
-  .card5 p,
-  .card6 p,
-  .card7 p {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 8px;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    font-size: 0.9rem;
-    text-align: center;
-    color: white;
-  }
+    .card1 p,
+    .card2 p,
+    .card3 p,
+    .card4 p,
+    .card5 p,
+    .card6 p,
+    .card7 p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 8px;
+      margin: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      font-size: 0.9rem;
+      text-align: center;
+      color: white;
+    }
 
-  .form-container{
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    border-radius: 8px;
-    border: 4px solid blue;
-    padding: 20px;
-  
-  }
+    .form-container {
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+      border-radius: 8px;
+      border: 4px solid rgb(3, 3, 19);
+      padding: 20px;
+      margin: 20px 20px 20px 20px;
+    }
 
-  .form-container input{
-    width: 100%;
-    margin-bottom: 10px;
-  }
+    .form-container input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
 
-  .story-input {
-    width: 100%;
-    margin-bottom: 10px;
-    min-width: 200px;
-    height: 150px;
-  }
+    .story-input {
+      width: 100%;
+      margin-bottom: 10px;
+      min-width: 200px;
+      height: 150px;
+    }
 
-  .story-container{
+    .story-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      /* border-radius: 8px;
+      border: 4px solid rgb(4, 4, 24); */
+    }
 
-  }
-
-  .card-story{
-    position: relative;
-    width: 330px;
-    height: 230px;
-    margin: 0 20px 40px 20px;
-    overflow: hidden;
-    border-radius: 8px;
-
-  }
-  .card-story p1{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 8px;
-    margin: 0;
-    width: 100%;
-    font-size: 0.9rem;
-    text-align: center;
-    color: white;
-  }
-  .card-story p2{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 8px;
-    margin: 0;
-    width: 100%;
-    font-size: 0.9rem;
-    text-align: center;
-    color: white;
-  }
-  .card-story h2{
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    padding: 8px;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-  }
-
-  .story-button{
-
-  }
+        .card-story {
+          position: relative;
+          width: 330px;
+          height: 230px;
+          margin: 0 20px 40px;
+          overflow: hidden;
+          border-radius: 8px;
+          border: 1px solid black;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+          background-color: #524d4d;
+        }
+    
+        .card-story-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+        }
+    
+        .card-story img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0.7;
+        }
+    
+        .card-story header {
+          font-size: 1.2rem;
+          font-weight: bold;
+          text-align: center;
+          color: white;
+          background-color: #333;
+          margin: 0;
+          padding: 16px 8px 8px 8px;
+        }
+    
+        .card-story p {
+          font-size: 0.9rem;
+          text-align: center;
+          color: white;
+          margin: 0;
+          padding: 8px;
+        }
+    
+        .card-story-buttons {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 16px;
+        }
+    
+        .story-button {
+          margin: 10px 10px 10px 20px;
+          padding: 8px 16px;
+          font-size: 0.9rem;
+          color: white;
+          background-color: #333;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
