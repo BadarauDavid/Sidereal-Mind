@@ -57,7 +57,7 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
     }
 
     const API_KEY = "EYakiC9CRTtStwIrnt4EkxmdhZHB3TkqAqeTC19AIajI5yi3BksUzX3v";
-    const API_URL = "https://api.pexels.com/v1/search?per_page={1-50}";
+    const API_URL = "https://api.pexels.com/v1/search?per_page={1-50}&orientation=portrait";
 
     const fetchData = async (query) => {
         const response = await fetch(`${API_URL}&query=${query}`, {
@@ -91,7 +91,7 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
                     <h2>{name}</h2>
                     <p>{story.slice(0, number)}</p>
                     <p>{date}</p>
-                    <img src={imageUrl} />
+                    {imageUrl && <img src={imageUrl} />}
                     <button onClick={() => setPressEdit(!pressEdit)} className="story-button">
                     <i className="fa fa-scissors"></i>
                     </button>
