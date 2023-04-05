@@ -49,11 +49,16 @@ function StorySharing() {
       }
     }
     fetchData();
-  }, []);
+  }, [experience]);
 
   const handleDelete = (id) => {
     const updatedExperience = experience.filter(s => s._id !== id);
     setExperience(updatedExperience);
+  }
+
+  const handleSave = (id) => {
+    const savedExperience = experience.filter(s => s._id === id);
+    setExperience(savedExperience);
   }
 
   return (
@@ -79,6 +84,7 @@ function StorySharing() {
             story={s.story}
             key={i}
             onDelete={handleDelete}
+            onSave={handleSave}
           />
         ))}
       </div>
