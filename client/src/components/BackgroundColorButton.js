@@ -12,10 +12,10 @@ function BackgroundColorButton(props) {
 
     return (
         <button className="background">
-            Choose background color
+            Choose background color: 
             <input
                 type="color"
-                placeholder="Choose background color"
+                placeholder="Choose background color:"
                 value={bgColor}
                 onChange={handleColorChange} 
             />
