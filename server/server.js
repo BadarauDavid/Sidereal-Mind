@@ -69,4 +69,15 @@ app.patch("/api/story-sharing/:_id", async (req, res) => {
     }
 })
 
+app.patch("/api/story-sharing/:_id", async (req, res) => {
+    const id = req.params._id;
+    const likes = req.body
+
+    try {
+        const likedExperience = await Story.findByIdAndUpdate(id, likes, {new: true});
+        return res.json(likedExperience);
+    }catch(err){
+        console.error(err);
+    }
+})
 app.listen(3001, () => console.log('Server started on port 3001'));

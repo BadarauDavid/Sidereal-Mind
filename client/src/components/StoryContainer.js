@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function StoryContainer({ id, name, story, onDelete, onSave, date, like}) {
+function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
     const [number, setNumber] = useState(20);
     const [show, setShow] = useState(true);
     const [pressEdit, setPressEdit] = useState(true);
@@ -38,6 +38,22 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, like}) {
         }
     };
 
+    const handleLike = async () =>{
+        likes ++;
+        try {
+            await fetch(`http://localhost:3001/api/story-sharing/${id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ like:likes}),
+            });
+            onSave(id);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <div className="card-story">
             {pressEdit ? (
@@ -51,7 +67,7 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, like}) {
                     <button onClick={handleDelete} className="story-button">
                     <i className="fa fa-trash-o"></i>
                     </button>
-                    <button onClick={()=>console.log("like")}>{like} <i className="fa fa-thumbs-up"></i></button>
+                    <button onClick={handleLike}>{likes} <i className="fa fa-thumbs-up"></i></button>
                     {show ? (
                         <button
                             className="story-button"
