@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 
-function StoryContainer({ id, name, story, onDelete }) {
+function StoryContainer({ id, name, story, onDelete, onSave }) {
     const [number, setNumber] = useState(20);
     const [show, setShow] = useState(true);
-    const [editUser, setEditUser] = useState(null);
     const [pressEdit, setPressEdit] = useState(true);
+    const [nameEdit, setNameEdit] = useState(name);
+    const [storyEdit, setStoryEdit] = useState(story);
 
     const handleDelete = async () => {
         try {
@@ -16,6 +17,24 @@ function StoryContainer({ id, name, story, onDelete }) {
             onDelete(id);
         } catch (err) {
             console.error(err);
+        }
+    };
+
+    const handleSave = async () => {
+        setPressEdit(!pressEdit);
+        try {
+            await fetch(`http://localhost:3001/api/story-sharing/${id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name: nameEdit, story: storyEdit }),
+            });
+            onSave(id);
+            // onSave(name);
+            // onSave(story);
+        } catch (error) {
+            console.error(error);
         }
     };
 
@@ -55,9 +74,9 @@ function StoryContainer({ id, name, story, onDelete }) {
                 </div>
             ) : (
                 <div>
-                    <input value={name} />
-                    <input value={story} />
-                    <button onClick={() => setPressEdit(!pressEdit)} className="story-button">
+                    <input value={nameEdit} onChange={(e) => {setNameEdit(e.target.value)}}/>
+                    <input value={storyEdit} onChange={(e) => {setStoryEdit(e.target.value)}} />
+                    <button onClick={handleSave} className="story-button">
                         Save
                     </button>
                 </div>

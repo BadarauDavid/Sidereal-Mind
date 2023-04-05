@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!")
 });
 
-app.post("/api/story-sharing",(req,res)=>{
+app.post("/api/story-sharing",(req, res)=>{
     const name = req.body.name;
     const story = req.body.story;
     const createAt = Date.now();
@@ -39,7 +39,7 @@ app.post("/api/story-sharing",(req,res)=>{
     }
 });
 
-app.get("/api/story-sharing",async(req,res)=>{
+app.get("/api/story-sharing",async(req, res)=>{
     try{
         const insertedStory = await Story.find();
         res.json(insertedStory);
@@ -48,12 +48,23 @@ app.get("/api/story-sharing",async(req,res)=>{
     }
 })
 
-app.delete("/api/story-sharing/:_id", async (req,res)=>{
+app.delete("/api/story-sharing/:_id", async (req, res)=>{
     const id = req.params._id;
     try {
-         await Story.findByIdAndDelete(id);
+        await Story.findByIdAndDelete(id);
     }catch(err){
         console.error(err); 
+    }
+})
+
+app.patch("/api/story-sharing/:_id", async (req, res) => {
+    const id = req.params._id;
+    const updates = req.body;
+    try {
+        const updatedExperience = await Story.findByIdAndUpdate(id, updates, {new: true});
+        return res.json(updatedExperience);
+    }catch(err){
+        console.error(err);
     }
 })
 
