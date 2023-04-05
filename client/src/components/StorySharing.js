@@ -10,6 +10,9 @@ function StorySharing() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { name, story };
+    if (name.trim() === '' || story.trim() === '') {
+      return;
+    }
     try {
       const response = await fetch("http://localhost:3001/api/story-sharing", {
         method: "POST",
@@ -24,6 +27,7 @@ function StorySharing() {
     } catch (err) {
       console.log(err);
     }
+
   };
 
   // async function read() {
@@ -44,6 +48,7 @@ function StorySharing() {
         const response = await fetch("http://localhost:3001/api/story-sharing");
         const data = await response.json();
         setExperience(data);
+        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -85,6 +90,8 @@ function StorySharing() {
             key={i}
             onDelete={handleDelete}
             onSave={handleSave}
+            date={`${s.createAt.split("T")[0]} ${s.createAt.split("T")[1].slice(0,5)}` }
+            like={s.like}
           />
         ))}
       </div>

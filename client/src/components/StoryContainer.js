@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function StoryContainer({ id, name, story, onDelete, onSave }) {
+function StoryContainer({ id, name, story, onDelete, onSave, date, like}) {
     const [number, setNumber] = useState(20);
     const [show, setShow] = useState(true);
     const [pressEdit, setPressEdit] = useState(true);
@@ -44,12 +44,14 @@ function StoryContainer({ id, name, story, onDelete, onSave }) {
                 <div>
                     <h2>{name}</h2>
                     <p>{story.slice(0, number)}</p>
+                    <p>{date}</p>
                     <button onClick={() => setPressEdit(!pressEdit)} className="story-button">
-                        Edit
+                    <i className="fa fa-scissors"></i>
                     </button>
                     <button onClick={handleDelete} className="story-button">
-                        Delete
+                    <i className="fa fa-trash-o"></i>
                     </button>
+                    <button onClick={()=>console.log("like")}>{like} <i className="fa fa-thumbs-up"></i></button>
                     {show ? (
                         <button
                             className="story-button"
