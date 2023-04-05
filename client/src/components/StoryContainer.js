@@ -7,7 +7,6 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
     const [pressEdit, setPressEdit] = useState(true);
     const [nameEdit, setNameEdit] = useState(name);
     const [storyEdit, setStoryEdit] = useState(story);
-
     const handleDelete = async () => {
         try {
             const response = await fetch(`http://localhost:3001/api/story-sharing/${id}`, {
@@ -57,7 +56,7 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
     return (
         <div className="card-story">
             {pressEdit ? (
-                <div>
+                <div >
                     <h2>{name}</h2>
                     <p>{story.slice(0, number)}</p>
                     <p>{date}</p>

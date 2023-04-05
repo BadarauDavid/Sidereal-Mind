@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import StoryContainer from "./StoryContainer";
+import BackgroundColorButton from "./BackgroundColorButton";
+import Header from "./Header";
 
 function StorySharing() {
   const [name, setName] = useState("");
   const [story, setStory] = useState("")
   const [experience, setExperience] = useState([]);
-
+  const [bgColor, setBgColor] = useState("#2DB4B1");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,7 +67,16 @@ function StorySharing() {
     setExperience(savedExperience);
   }
 
+
+
+const handleBgColor = (color) => {
+  setBgColor(color);}
+
   return (
+    <div className="App" style={{ backgroundColor: bgColor }}>
+      <Header/>
+      <BackgroundColorButton onBgColorChange={handleBgColor} />
+
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form">
         <label>Your name/ Alias:</label>
@@ -74,12 +85,13 @@ function StorySharing() {
           onChange={(e) => setName(e.target.value)}
         />
         <label>Your story:</label>
-        <input
+        <input className="story-input"
           type="text"
           onChange={(e) => setStory(e.target.value)}
         />
         <button type="submit">Submit</button>
       </form>
+      </div>
       <div className="story-container">
         {experience.map((s, i) => (
           <StoryContainer
@@ -93,8 +105,9 @@ function StorySharing() {
             likes={s.like}
           />
         ))}
-      </div>
+
     </div>
+  </div>
   );
 }
 
