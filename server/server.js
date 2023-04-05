@@ -25,11 +25,12 @@ app.post("/api/story-sharing",(req, res)=>{
     const name = req.body.name;
     const story = req.body.story;
     const createAt = Date.now();
-
+    const like = 0;
     const experience = new Story({
         name,
         story,
-        createAt
+        createAt,
+        like
     }) 
     try {
         experience.save();

@@ -4,7 +4,8 @@ const {Schema,model} = mongoose;
 const storySchema = new Schema({
     name: String,
     story: String,
-    createAt: Date
+    createAt: Date,
+    like: Number
 })
 
 const Story = model("Story",storySchema);
