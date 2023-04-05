@@ -48,7 +48,6 @@ function StorySharing() {
         const response = await fetch("http://localhost:3001/api/story-sharing");
         const data = await response.json();
         setExperience(data);
-        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -91,7 +90,7 @@ function StorySharing() {
             onDelete={handleDelete}
             onSave={handleSave}
             date={`${s.createAt.split("T")[0]} ${s.createAt.split("T")[1].slice(0,5)}` }
-            like={s.like}
+            likes={s.like}
           />
         ))}
       </div>
