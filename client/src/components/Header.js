@@ -1,10 +1,12 @@
 import React from "react";
+import SiderealImage from "./sidereal.png";
+
 
 function Header() {
     return (
         <header className="app-header">
             <h1>
-                SiderealMind
+                <img src={SiderealImage} />
             </h1>
             <p>
                 Soothing Sounds and Visuals for Guided Meditation and Breathwork
