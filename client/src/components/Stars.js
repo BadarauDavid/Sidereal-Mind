@@ -13,7 +13,7 @@ function Stars() {
 
     useEffect(() => {
         fetch(
-            `https://api.nasa.gov/planetary/apod?date=${selectedDate}&api_key=1ZmnTZoCRQRvfsQcCXs4I1I7PgX8gSAJHh4hjj9Y`
+            `https://api.nasa.gov/planetary/apod?date=${selectedDate}&api_key=OG42azj5tsrXGohQAWRGfY9T7s1YNsjlngQCYLfx`
         )
             .then((response) => response.json())
             .then((data) => {
@@ -35,7 +35,7 @@ function Stars() {
                 setExplanation(data.explanation);
             })
             .catch((error) => console.error(error));
-    }, []);
+    }, [selectedDate]);
 
     const handleDateChange = (event) => {
         const date = event.target.value;
