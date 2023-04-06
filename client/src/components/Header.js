@@ -12,7 +12,7 @@ function Header() {
                 Soothing Sounds and Visuals for Guided Meditation and Breathwork
             </p>
             <p>
-                Welcome! If you are looking for wellness, peace of mind, better focus and better sleep, you've come to the right place!
+                Welcome! If you are looking for wellbeing, peace of mind, better focus and better sleep, you've come to the right place!
             </p>
         </header>
     )
