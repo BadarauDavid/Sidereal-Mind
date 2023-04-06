@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-function Music () {
+function Music() {
+  
+  const [songs, setSongs] = useState([]);
 
         const API_KEY = "79064c9ee5msh3a853c614f52775p1a84bejsn4e93f7c3af40";
         const API_URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=ambiental";
@@ -14,7 +16,8 @@ function Music () {
               },
             });
             const music = await response.json();
-            console.log(music);
+            console.log(music)
+            setSongs(music.data)
           } catch (err) {
             console.error(err);
           }
@@ -30,11 +33,16 @@ function Music () {
         <p>Music for programming, stay focused, sleep, relaxation</p>
         <br></br>
         <br></br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/0diEVDtCI9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br></br>
-        <br></br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/WL9EOfzoSsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br></br>
+        {songs.map((song) => (
+          <iframe
+            key={song.id}
+            width="560"
+            height="315"
+            src={song.preview}
+            title={song.title}
+          ></iframe>
+        ))}
+        <br></br> 
         <br></br>
         </div>
     )
