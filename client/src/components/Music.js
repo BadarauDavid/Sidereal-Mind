@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 function Music () {
 
         const API_KEY = "79064c9ee5msh3a853c614f52775p1a84bejsn4e93f7c3af40";
-        const API_URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
+        const API_URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=ambiental";
       
         async function fetchData() {
           try {
@@ -27,7 +27,7 @@ function Music () {
 
     return (
         <div >
-            <p>Music for programming, stay focused, sleep, and relaxation</p>
+            <p>Music for programming, stay focused, sleep, relaxation</p>
         </div>
     )
 }

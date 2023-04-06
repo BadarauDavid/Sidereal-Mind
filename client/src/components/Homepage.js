@@ -48,8 +48,6 @@ const cardDetails = [
 
 return (
   <div className="App">
-    {/* <Header />
-    <BackgroundColorButton onBgColorChange={handleBgColor} /> */}
     <div className='card-container'>
       {cardDetails.map((card, i) => (
         <Link to={card.url} key={i} className={card.className}>

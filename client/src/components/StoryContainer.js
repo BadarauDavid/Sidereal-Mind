@@ -33,8 +33,6 @@ function StoryContainer({ id, name, story, onDelete, onSave, date, likes}) {
                 body: JSON.stringify({ name: nameEdit, story: storyEdit }),
             });
             onSave(id);
-            // onSave(name);
-            // onSave(story);
         } catch (error) {
             console.error(error);
         }

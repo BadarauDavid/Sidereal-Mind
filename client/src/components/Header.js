@@ -15,11 +15,11 @@ function Header() {
     return (
         
         <div className="App" style={{ backgroundColor: bgColor }}>
-            {/* <a href="http://localhost:3000/homepage" target="_blank" rel="noopener noreferrer">Homepage</a> */}
-        <header className="app-header">
+            <header className="app-header">
             <h1>
                 <img src={SiderealImage} />
-            </h1>
+                </h1>
+                <BackgroundColorButton onBgColorChange={handleBgColor} />
             <p>
                 Soothing Sounds and Visuals for Guided Meditation and Breathwork
             </p>
@@ -27,7 +27,7 @@ function Header() {
                 Welcome! If you are looking for wellbeing, peace of mind, better focus and better sleep, you've come to the right place!
             </p>
         </header>
-        <BackgroundColorButton onBgColorChange={handleBgColor} />
+       
         <Outlet/>
         </div>
     )

@@ -14,12 +14,20 @@ app.use(function (req, res, next) {
 app.use(express.urlencoded({ extended: false }));
 
 let Story = require("./model/Story.js");
+let Music = require("./model/Music.js");
+
 mongoose.connect("mongodb+srv://team:SiderealMind@cluster0.sjlwzbv.mongodb.net/SiderealMind")
 
 
 app.get("/", (req, res) => {
     res.send("Hello World!")
 });
+
+app.post("/api/music", (req, res) => {
+    const title = req.body.title;
+    const artist = req.body.artist;
+    const album = req.body.album;
+})
 
 app.post("/api/story-sharing",(req, res)=>{
     const name = req.body.name;

@@ -32,17 +32,6 @@ function StorySharing() {
 
   };
 
-  // async function read() {
-  //   try {
-  //     const response = await fetch("http://localhost:3001/api/story-sharing");
-  //     const data = await response.json();
-  //     setExperience(data)
-  //   }
-  //   catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-  // read();
 
   useEffect(() => {
     async function fetchData() {
@@ -66,11 +55,6 @@ function StorySharing() {
     const savedExperience = experience.filter(s => s._id === id);
     setExperience(savedExperience);
   }
-
-
-
-// const handleBgColor = (color) => {
-//   setBgColor(color);}
 
   return (
     <div className="App">
