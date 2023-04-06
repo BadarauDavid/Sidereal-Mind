@@ -80,4 +80,11 @@ app.patch("/api/story-sharing/:_id", async (req, res) => {
         console.error(err);
     }
 })
+
+app.post('/api/homepage', (req, res) => {
+    const { color } = req.body;
+    currentBgColor = color;
+    res.json({ color });
+});
+
 app.listen(3001, () => console.log('Server started on port 3001'));
