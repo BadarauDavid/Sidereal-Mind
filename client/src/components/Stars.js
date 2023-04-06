@@ -44,7 +44,6 @@ function Stars() {
 
     return (
         <div>
-            <Header />
             <div>
                 <input type="date" onChange={handleDateChange} value={selectedDate} />
                 {imageSrc && <img src={imageSrc} alt={imageAlt} width="800" />}

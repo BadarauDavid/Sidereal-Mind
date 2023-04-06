@@ -14,27 +14,27 @@ import CardContainer from "./CardContainer";
 function Homepage () {
 const [pictures, setPictures] = useState("");
 
-const [bgColor, setBgColor] = useState("#2DB4B1");
+// const [bgColor, setBgColor] = useState("#2DB4B1");
 
 // const handleBgColor = (color) => {
 //   setBgColor(color);
 //   };
   
-  const handleBgColor = async (color) => {
-    try {
-      const response = await fetch('http://localhost:3001/api/homepage', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ color })
-      });
-      const data = await response.json();
-      setBgColor(data.color);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const handleBgColor = async (color) => {
+  //   try {
+  //     const response = await fetch('http://localhost:3001/api/homepage', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({ color })
+  //     });
+  //     const data = await response.json();
+  //     setBgColor(data.color);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
 const cardDetails = [
   {url: "/stars",photoUrl:"https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", className:"card1", name:"Aim for the stars!", paragraph:"Astonishing pictures of the Universe"},
@@ -47,9 +47,9 @@ const cardDetails = [
 ]
 
 return (
-  <div className="App" style={{ backgroundColor: bgColor }}>
-    <Header />
-    <BackgroundColorButton onBgColorChange={handleBgColor} />
+  <div className="App">
+    {/* <Header />
+    <BackgroundColorButton onBgColorChange={handleBgColor} /> */}
     <div className='card-container'>
       {cardDetails.map((card, i) => (
         <Link to={card.url} key={i} className={card.className}>

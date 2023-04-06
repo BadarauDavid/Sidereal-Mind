@@ -69,15 +69,12 @@ function StorySharing() {
 
 
 
-const handleBgColor = (color) => {
-  setBgColor(color);}
+// const handleBgColor = (color) => {
+//   setBgColor(color);}
 
   return (
-    <div className="App" style={{ backgroundColor: bgColor }}>
-      <Header/>
-      <BackgroundColorButton onBgColorChange={handleBgColor} />
-
-    <div className="form-container">
+    <div className="App">
+      <div className="form-container">
       <form onSubmit={handleSubmit} className="form">
         <label>Your name/ Alias:</label>
         <input
