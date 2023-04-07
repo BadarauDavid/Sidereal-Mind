@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import StoryContainer from "./StoryContainer";
-import BackgroundColorButton from "./BackgroundColorButton";
-import Header from "./Header";
 
 function StorySharing() {
   const [name, setName] = useState("");
   const [story, setStory] = useState("")
   const [experience, setExperience] = useState([]);
-  const [bgColor, setBgColor] = useState("#2DB4B1");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
