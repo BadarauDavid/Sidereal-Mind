@@ -33,7 +33,7 @@ function Music() {
         <p>Music for programming, stay focused, sleep, relaxation</p>
         <br></br>
         <br></br>
-        {songs.map((song) => (
+        {songs && songs.map((song) => (
           <iframe
             key={song.id}
             width="560"

@@ -2,18 +2,15 @@
       height: 100vh;
       margin: 0;
       padding: 0;
-    }
-
-    .App {
       text-align: center;
-        margin: 0;
-        padding: 0;
     }
 
     .app-header {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0;
+          padding: 0;
       }
 
     .card-container {
@@ -81,24 +78,27 @@
       color: white;
     }
 
-    .card1 p,
-    .card2 p,
-    .card3 p,
-    .card4 p,
-    .card5 p,
-    .card6 p,
-    .card7 p {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding: 8px;
-      margin: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      width: 100%;
-      font-size: 0.9rem;
-      text-align: center;
-      color: white;
-    }
+        .card1 p,
+        .card2 p,
+        .card3 p,
+        .card4 p,
+        .card5 p,
+        .card6 p,
+        .card7 p {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 8px;
+          margin: 0;
+          background-color: rgba(0, 0, 0, 0.6);
+          width: calc(100% - 30px);
+          font-size: 0.9rem;
+          text-align: center;
+          align-items: center;
+          color: white;
+          display: flex;
+          justify-content: center;
+        }
 
     .form-container {
       align-items: center;
