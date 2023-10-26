@@ -100,7 +100,7 @@ Our future plans for Sidereal-Mind platform include:
 
 - StorySharing where you can share an experience with us, you can edit and even like other posts
 
-<img src="https://cdn.discordapp.com/attachments/1080812341693784124/1166696728603414538/gid_meditation.png?ex=654b6e00&is=6538f900&hm=9caf1a5d3d69ee06d97407942163e76edbf33d3c5ba1978a579f80534022f713&">
+<img src="https://cdn.discordapp.com/attachments/1080812341693784124/1167033893661188117/story-sharing.png?ex=654ca802&is=653a3302&hm=485a6d406937537461704a1a78198f93e9a1c11a46373109dbea7ccc535eccba&">
 
 
 - AboutUS where we have a powerpoint presentation about us and our project
